@@ -1,0 +1,1664 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Mar 20, 2021 07:01:00 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@functional</a></li>
+					<li><a href='#'>@all</a></li>
+					<li><a href='#'>@positive</a></li>
+					<li><a href='#'>@negative</a></li>
+					<li><a href='#'>@delete</a></li>
+					<li><a href='#'>@add</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='25%'><span class='strong'>1</span> feature(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='75%'>3</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='66.667%'><span class='strong'>12</span> scenario(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>6</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='86.765%'><span class='strong'>59</span> step(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='8.824%'>6</span> scenario(s) failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='4.412%'>3</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='4.412%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Add Pupil request functional tests</span>
+						<span class='test-time'>Mar 20, 2021 07:01:01 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='2' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 1s+774ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to add pupil with only required parameters</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='4' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='5' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='6' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='7' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>firstName</td><td>Umanga</td></tr><tr><td>lastName</td><td>Madawala</td></tr><tr><td>gradeId</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='8' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_pupil_id_field_in_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see "pupilId" field in response</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='10' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+170ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to add pupil with all supported parameters</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='12' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='13' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_all_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with all values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td><td>infix</td><td>classId</td><td>email</td><td>isDisabled</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td><td>NewMCUser</td><td>1</td><td>test@mail.com</td><td>false</td></tr></table></div>
+		</li>
+		<li test-id='14' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='15' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>firstName</td><td>Umanga</td></tr><tr><td>lastName</td><td>Madawala</td></tr><tr><td>gradeId</td><td>1</td></tr><tr><td>infix</td><td>NewMCUser</td></tr><tr><td>classId</td><td>1</td></tr><tr><td>email</td><td>test@mail.com</td></tr><tr><td>isDisabled</td><td>false</td></tr></table></div>
+		</li>
+		<li test-id='16' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_pupil_id_field_in_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see "pupilId" field in response</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='18' status='fail'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+51ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: User should not be able to add pupil if basic authentication header is not provided</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='20' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='21' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_without_basic_auth_header(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values without basic authentication header</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='22' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 401</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='23' class='node and fail' status='fail'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>status</td><td>401</td></tr><tr><td>message</td><td>Authorization header required</td></tr></table></div>
+			<textarea disabled class="code-block">java.lang.AssertionError: "message" field does not exist in response body
+
+Actual Response body is {"status":401,"massage":"Authorization header required"}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/AddPupil.feature:42)
+</textarea>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='25' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@positive</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to add pupil with first name having max length of ---</div>
+	</div>
+</div>
+<div class='scenario node' test-id='26' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@positive</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to add pupil with first name having min length of ---</div>
+	</div>
+</div>
+<div class='scenario node' test-id='27' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@negative</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should not be able to add pupil if first name is not given</div>
+	</div>
+</div>
+<div class='scenario node' test-id='28' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@negative</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should not be able to add pupil if last name is not given</div>
+	</div>
+</div>
+<div class='scenario node' test-id='29' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@negative</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should not be able to add pupil if grade Id is not given</div>
+	</div>
+</div>
+<div class='scenario node' test-id='30' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@negative</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should not be able to add pupil if username is not valid</div>
+	</div>
+</div>
+<div class='scenario node' test-id='31' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@negative</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+0ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should not be able to add pupil if password is not valid</div>
+	</div>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete Pupils request functional tests</span>
+						<span class='test-time'>Mar 20, 2021 07:01:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='33' status='fail'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+		<span class='category label'>@delete</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+84ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: User should be able to delete a pupil with valid pupilId</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='35' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='36' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='37' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='38' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='39' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.DeletePupilAPISteps.i_send_delete_pupil_request_with_valid_pupilId(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send delete pupil request with "valid" pupilId</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='40' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 204</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='41' class='node and fail' status='fail'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_field_in_response(java.lang.String)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>And I should see "pupil deleted" description in response</div>
+			<textarea disabled class="code-block">java.lang.IllegalStateException: Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+Try registering a default parser using:
+   RestAssured.defaultParser(<parser type>);
+Content was:
+
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.assertion.StreamVerifier.newAssertion(StreamVerifier.groovy:43)
+	at io.restassured.assertion.StreamVerifier$newAssertion.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcher.validate(BodyMatcher.groovy:85)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcherGroup$_validate_closure2.doCall(BodyMatcherGroup.groovy:47)
+	at sun.reflect.GeneratedMethodAccessor136.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:428)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3562)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3547)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3647)
+	at org.codehaus.groovy.runtime.dgm$101.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:247)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.assertion.BodyMatcherGroup.validate(BodyMatcherGroup.groovy:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:480)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.GeneratedMethodAccessor119.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:261)
+	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:108)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.GeneratedMethodAccessor124.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at utilities.APIValidationUtil.validateBodyHasParameter(APIValidationUtil.java:27)
+	at steps.CommonSteps.i_should_see_field_in_response(CommonSteps.java:89)
+	at ?.I should see "pupil deleted" description in response(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:15)
+</textarea>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='43' status='fail'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+60ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: User should not be able to delete a pupil with non-existent pupilId</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='45' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='46' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='47' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='48' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='49' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.DeletePupilAPISteps.i_send_delete_pupil_request_with_valid_pupilId(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send delete pupil request with "non-existent" pupilId</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='50' class='node then fail' status='fail'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Then I should see response with status code as 404</div>
+			<textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <404> but was <204>.
+
+
+Actual Response body is 
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:20)
+</textarea>
+		</li>
+		<li test-id='51' class='node and skip' status='skip'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_field_in_response(java.lang.String)"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>And I should see "Not found" description in response</div>
+			<div class="node-step">Step skipped</div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='53' status='fail'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+89ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: User should not be able to delete a pupil with non-existent pupilId</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='55' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='56' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='57' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='58' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='59' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.DeletePupilAPISteps.i_send_delete_pupil_request_with_valid_pupilId(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send delete pupil request with "empty" pupilId</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='60' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 405</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='61' class='node and fail' status='fail'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>status</td><td>405</td></tr><tr><td>message</td><td>DELETE method not allowed</td></tr></table></div>
+			<textarea disabled class="code-block">java.lang.AssertionError: "message" field does not exist in response body
+
+Actual Response body is {"status":405,"massage":"DELETE method not allowed"}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:27)
+</textarea>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='63' status='fail'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+80ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: User should not be able to delete a pupil if basic authentication header is not provided</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='65' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='66' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='67' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='68' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='69' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.DeletePupilAPISteps.i_send_delete_pupil_request_without_basic_authentication_header()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send delete pupil request without basic authentication header</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='70' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 401</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='71' class='node and fail' status='fail'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>status</td><td>401</td></tr><tr><td>message</td><td>Authorization header required</td></tr></table></div>
+			<textarea disabled class="code-block">java.lang.AssertionError: "message" field does not exist in response body
+
+Actual Response body is {"status":401,"massage":"Authorization header required"}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:36)
+</textarea>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='73'>
+					<div class='test-heading'>
+						<span class='test-name'>Get Pupil request functional tests</span>
+						<span class='test-time'>Mar 20, 2021 07:01:03 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='74' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@add</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+106ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to get a pupil with valid pupilId</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='76' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='77' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='78' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='79' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='80' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.GetPupilAPISteps.i_send_get_pupil_request_with_valid_pupilId(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send get pupil request with "valid" pupilId</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='81' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 200</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='82' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>firstName</td><td>Umanga</td></tr><tr><td>lastName</td><td>Madawala</td></tr><tr><td>gradeId</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='83' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_pupil_id_field_in_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see "pupilId" field in response</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='85' status='fail'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@add</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+60ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span> Scenario: User should not be able to get a pupil with non-existent pupilId</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='87' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='88' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='89' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='90' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='91' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.GetPupilAPISteps.i_send_get_pupil_request_with_valid_pupilId(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send get pupil request with "non-existent" pupilId</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='92' class='node then fail' status='fail'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status fail' title='fail'><i class='material-icons'>cancel</i></span>Then I should see response with status code as 404</div>
+			<textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <404> but was <504>.
+
+
+Actual Response body is {"status":504,"massage":"Pupil with ID: \"12321\" not found"}
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/GetPupil.feature:25)
+</textarea>
+		</li>
+		<li test-id='93' class='node and skip' status='skip'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(io.cucumber.datatable.DataTable)"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>And I should see following values in response body</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>FIELD</td><td>VALUE</td></tr><tr><td>status</td><td>404</td></tr></table></div>
+			<div class="node-step">Step skipped</div>
+		</li>
+		<li test-id='94' class='node and skip' status='skip'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_should_see_field_with_value(java.lang.String,java.lang.String)"><span class='status skip' title='skip'><i class='material-icons'>redo</i></span>And I should see "message" field with value "Pupil with ID: \"pupilId\" not found"</div>
+			<div class="node-step">Step skipped</div>
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='96' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@add</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+98ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to get all pupils if empty pupilId is sent</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='98' class='node given pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_create_add_pupil_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Given I populate add pupil request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='99' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_send_add_pupil_request_with_following_details(io.cucumber.datatable.DataTable)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send add pupil request with mandatory values</div>
+			<div class="node-step"><table class='runtime-table table-striped table'><tr><td>firstName</td><td>lastName</td><td>gradeId</td></tr><tr><td>Umanga</td><td>Madawala</td><td>1</td></tr></table></div>
+		</li>
+		<li test-id='100' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 201</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='101' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.AddPupilAPISteps.i_save_pupil_id_from_response(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I save "pupilId" from response</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='102' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.GetPupilAPISteps.i_send_get_pupil_request_with_valid_pupilId(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send get pupil request with "empty" pupilId</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='103' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 200</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='104' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_all_records_have_id_field(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see all records have "pupilId" field</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='106'>
+					<div class='test-heading'>
+						<span class='test-name'>Get Pupils request functional tests</span>
+						<span class='test-time'>Mar 20, 2021 07:01:04 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+<div class='scenario node' test-id='107' status='pass'>
+	<div class='category-list'>
+		<span class='category label'>@functional</span>
+		<span class='category label'>@all</span>
+	</div>
+	<span class='duration right label'>0h 0m 0s+30ms</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span> Scenario: User should be able to get all pupils created</div>
+	</div>
+	<ul class='steps'>
+		<li test-id='109' class='node when pass' status='pass'>
+			<div class="step-name" title="steps.GetPupilsSteps.i_send_get_pupils_request()"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>When I send Get Pupils request</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='110' class='node then pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_response_with_status_code_as(java.lang.Integer)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>Then I should see response with status code as 200</div>
+			<div class="node-step"></div>
+		</li>
+		<li test-id='111' class='node and pass' status='pass'>
+			<div class="step-name" title="steps.CommonSteps.i_should_see_all_records_have_id_field(java.lang.String)"><span class='status pass' title='pass'><i class='material-icons'>check_circle</i></span>And I should see all records have "pupilId" field</div>
+			<div class="node-step"></div>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@functional</span>
+						<span class='category-status right'>
+						<span class='label pass'>12</span>
+						<span class='label fail'>6</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 12</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 6</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:01 PM</td>
+										<td class='linked' test-id='2'>User should be able to add pupil with only required parameters</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='10'>User should be able to add pupil with all supported parameters</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='18'>User should not be able to add pupil if basic authentication header is not provided</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='25'>User should be able to add pupil with first name having max length of ---</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='26'>User should be able to add pupil with first name having min length of ---</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='27'>User should not be able to add pupil if first name is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='28'>User should not be able to add pupil if last name is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='29'>User should not be able to add pupil if grade Id is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='30'>User should not be able to add pupil if username is not valid</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='31'>User should not be able to add pupil if password is not valid</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='33'>User should be able to delete a pupil with valid pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='43'>User should not be able to delete a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='53'>User should not be able to delete a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='63'>User should not be able to delete a pupil if basic authentication header is not provided</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='74'>User should be able to get a pupil with valid pupilId</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='85'>User should not be able to get a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='96'>User should be able to get all pupils if empty pupilId is sent</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:04 PM</td>
+										<td class='linked' test-id='107'>User should be able to get all pupils created</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@all</span>
+						<span class='category-status right'>
+						<span class='label pass'>12</span>
+						<span class='label fail'>6</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 12</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 6</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:01 PM</td>
+										<td class='linked' test-id='2'>User should be able to add pupil with only required parameters</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='10'>User should be able to add pupil with all supported parameters</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='18'>User should not be able to add pupil if basic authentication header is not provided</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='25'>User should be able to add pupil with first name having max length of ---</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='26'>User should be able to add pupil with first name having min length of ---</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='27'>User should not be able to add pupil if first name is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='28'>User should not be able to add pupil if last name is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='29'>User should not be able to add pupil if grade Id is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='30'>User should not be able to add pupil if username is not valid</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='31'>User should not be able to add pupil if password is not valid</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='33'>User should be able to delete a pupil with valid pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='43'>User should not be able to delete a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='53'>User should not be able to delete a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='63'>User should not be able to delete a pupil if basic authentication header is not provided</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='74'>User should be able to get a pupil with valid pupilId</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='85'>User should not be able to get a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='96'>User should be able to get all pupils if empty pupilId is sent</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:04 PM</td>
+										<td class='linked' test-id='107'>User should be able to get all pupils created</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@positive</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='25'>User should be able to add pupil with first name having max length of ---</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='26'>User should be able to add pupil with first name having min length of ---</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@negative</span>
+						<span class='category-status right'>
+						<span class='label pass'>5</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 5</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='27'>User should not be able to add pupil if first name is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='28'>User should not be able to add pupil if last name is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='29'>User should not be able to add pupil if grade Id is not given</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='30'>User should not be able to add pupil if username is not valid</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='31'>User should not be able to add pupil if password is not valid</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@delete</span>
+						<span class='category-status right'>
+						<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='33'>User should be able to delete a pupil with valid pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@add</span>
+						<span class='category-status right'>
+						<span class='label pass'>2</span>
+						<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='74'>User should be able to get a pupil with valid pupilId</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='85'>User should not be able to get a pupil with non-existent pupilId</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='96'>User should be able to get all pupils if empty pupilId is sent</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>java.lang.AssertionError</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>5</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='23'>And I should see following values in response body</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: "message" field does not exist in response body
+
+Actual Response body is {"status":401,"massage":"Authorization header required"}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/AddPupil.feature:42)
+</textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='50'>Then I should see response with status code as 404</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <404> but was <204>.
+
+
+Actual Response body is 
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:20)
+</textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='61'>And I should see following values in response body</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: "message" field does not exist in response body
+
+Actual Response body is {"status":405,"massage":"DELETE method not allowed"}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:27)
+</textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='71'>And I should see following values in response body</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: "message" field does not exist in response body
+
+Actual Response body is {"status":401,"massage":"Authorization header required"}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:36)
+</textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='92'>Then I should see response with status code as 404</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.AssertionError: 1 expectation failed.
+Expected status code <404> but was <504>.
+
+
+Actual Response body is {"status":504,"massage":"Pupil with ID: \"12321\" not found"}
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/GetPupil.feature:25)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>java.lang.IllegalStateException</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 20, 2021 07:01:03 PM</td>
+										<td class='linked' test-id='41'>And I should see "pupil deleted" description in response</td>
+										<td>
+											<textarea disabled class="code-block">java.lang.IllegalStateException: Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+Try registering a default parser using:
+   RestAssured.defaultParser(<parser type>);
+Content was:
+
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.assertion.StreamVerifier.newAssertion(StreamVerifier.groovy:43)
+	at io.restassured.assertion.StreamVerifier$newAssertion.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcher.validate(BodyMatcher.groovy:85)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcherGroup$_validate_closure2.doCall(BodyMatcherGroup.groovy:47)
+	at sun.reflect.GeneratedMethodAccessor136.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:428)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3562)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3547)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3647)
+	at org.codehaus.groovy.runtime.dgm$101.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:247)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.assertion.BodyMatcherGroup.validate(BodyMatcherGroup.groovy:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:480)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.GeneratedMethodAccessor119.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:261)
+	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:108)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.GeneratedMethodAccessor124.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at utilities.APIValidationUtil.validateBodyHasParameter(APIValidationUtil.java:27)
+	at steps.CommonSteps.i_should_see_field_in_response(CommonSteps.java:89)
+	at ?.I should see "pupil deleted" description in response(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:15)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>4</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>18</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>68</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 20, 2021 07:01:00 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 20, 2021 07:01:04 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 3s+732ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@functional</td>
+							<td>12</td>
+							<td>6</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>@all</td>
+							<td>12</td>
+							<td>6</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>@positive</td>
+							<td>2</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@negative</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@delete</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+						<tr>
+							<td>@add</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 4,
+				passParent: 1,
+				failParent: 3,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 3,
+				childCount: 18,
+				passChild: 12,
+				failChild: 6,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 6,
+				grandChildCount: 68,
+				passGrandChild: 59,
+				failGrandChild: 6,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 3,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 9,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Add Pupil request functional tests":2.1,"Delete Pupils request functional tests":0.335,"Get Pupil request functional tests":0.267,"Get Pupils request functional tests":0.03
+			};
+		</script>
+	
+		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
+	</body>
+</html>

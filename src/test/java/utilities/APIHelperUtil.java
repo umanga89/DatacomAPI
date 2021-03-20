@@ -12,5 +12,8 @@ public class APIHelperUtil {
         RestAssured.basePath=basePath;
     }
 
+    public static String getBasePath(){
+        return RestAssured.basePath;
+    }
 
 }

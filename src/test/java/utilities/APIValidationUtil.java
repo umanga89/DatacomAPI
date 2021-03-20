@@ -1,28 +1,39 @@
 package utilities;
 
 import io.restassured.response.Response;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.testng.Assert;
-import steps.BookAPISteps;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.hamcrest.Matchers.*;
 
-public class APIValidationUtil extends BaseUtil{
+public class APIValidationUtil extends BaseUtil {
 
-    public APIValidationUtil(BaseUtil base){
+    public APIValidationUtil() {
         BaseUtil.logger = LogManager.getLogger(APIValidationUtil.class.getName());
     }
 
-    public static void validateStatusCode(Response response, int statusCode) throws AssertionError{
+    public static void validateStatusCode(Response response, int statusCode) throws AssertionError {
         try {
             response.then().statusCode(statusCode);
-        }catch (AssertionError e){
-//            BaseUtil.logger.log(Level.ERROR,"Response status code assertion error");
-//            BaseUtil.logger.log(Level.ERROR,e.getMessage());
+        } catch (AssertionError e) {
+            throw e;
+        }
+    }
+
+    public static void validateBodyHasParameter(Response response, String key) throws AssertionError {
+        try {
+            response.then().body("$", hasKey(key));
+        } catch (AssertionError e) {
+            throw new AssertionError("\"" + key + "\" field does not exist in response body");
+        }
+    }
+
+    public static void validateBodyParameterIsNotNullOrEmpty(Response response, String key) throws AssertionError {
+        try {
+            response.then().body(key, not(isEmptyOrNullString()));
+        } catch (AssertionError e) {
             throw e;
         }
     }
@@ -30,9 +41,15 @@ public class APIValidationUtil extends BaseUtil{
     public static void validateBodyParameterWithStringValue(Response response, String key, String value) throws AssertionError {
         try {
             response.then().body(key, equalTo(value));
-        }catch (AssertionError e){
-//            BaseUtil.logger.log(Level.ERROR,"Response body assertion error");
-//            BaseUtil.logger.log(Level.ERROR,e.getMessage());
+        } catch (AssertionError e) {
+            throw e;
+        }
+    }
+
+    public static void validateBodyParameterWithBooleanValue(Response response, String key, boolean value) throws AssertionError {
+        try {
+            response.then().body(key, equalTo(value));
+        } catch (AssertionError e) {
             throw e;
         }
     }
@@ -40,19 +57,7 @@ public class APIValidationUtil extends BaseUtil{
     public static void validateBodyParameterWithIntValue(Response response, String key, int value) throws AssertionError {
         try {
             response.then().body(key, equalTo(value));
-        }catch (AssertionError e){
-//            BaseUtil.logger.log(Level.ERROR,"Response body assertion error");
-//            BaseUtil.logger.log(Level.ERROR,e.getMessage());
-            throw e;
-        }
-    }
-
-    public static void validateBodyParameterWithLongValue(Response response, String key, long value) throws AssertionError {
-        try {
-            response.then().body(key, equalTo(value));
-        }catch (AssertionError e){
-//            BaseUtil.logger.log(Level.ERROR,"Response body assertion error");
-//            BaseUtil.logger.log(Level.ERROR,e.getMessage());
+        } catch (AssertionError e) {
             throw e;
         }
     }
@@ -60,11 +65,47 @@ public class APIValidationUtil extends BaseUtil{
     public static void validateBodyIsEmpty(Response response) throws AssertionError {
         try {
             String responseString = response.then().extract().asString();
-            Assert.assertEquals(responseString,"null","Response body is not null");
-        }catch (AssertionError e){
-//            BaseUtil.logger.log(Level.ERROR,"Response body assertion error");
-//            BaseUtil.logger.log(Level.ERROR,e.getMessage());
+            Assert.assertEquals(responseString, null, "Response body is not null");
+        } catch (AssertionError e) {
             throw e;
         }
+    }
+
+    public static void validateBodyIsNotEmpty(Response response) throws AssertionError {
+        try {
+            String responseString = response.then().extract().asString();
+            Assert.assertNotEquals(responseString, null, "Response body is not null");
+        } catch (AssertionError e) {
+            throw e;
+        }
+    }
+
+    public static void validateAllRecordsHasGivenParameter(Response response, String fieldName) throws AssertionError {
+        boolean hasKey = true;
+        try {
+            JSONArray jsonArray = new JSONArray(response.getBody().asString());
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (!jsonObject.has(fieldName)) {
+                    hasKey = false;
+                }
+            }
+            Assert.assertTrue(hasKey);
+        } catch (AssertionError e) {
+            throw new AssertionError("field \"" + fieldName + "\" is not found in one or many records");
+        }
+    }
+
+    public static String getValueForKey(Response response, String key) throws AssertionError {
+
+        String pupilId = "";
+        try {
+            JSONObject jsonObject = new JSONObject(response.asString());
+            Assert.assertTrue(jsonObject.has(key));
+            pupilId = jsonObject.get(key).toString();
+        } catch (AssertionError e) {
+            throw new AssertionError("field \"" + key + "\" is not found in response");
+        }
+        return pupilId;
     }
 }

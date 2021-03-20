@@ -1,0 +1,374 @@
+<html>
+<head>
+<title>TestNG:  Taxi Booking Functional Testing</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Taxi Booking Functional Testing</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>12/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Mar 20 19:00:59 SGT 2021</td>
+</tr>
+<tr><td>Total time:</td><td>4 seconds (4701 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to add pupil if basic authentication header is not provided", "Optional[Add Pupil request functional tests]"</td>
+<td><div><pre>java.lang.AssertionError: &quot;message&quot; field does not exist in response body
+
+Actual Response body is {&quot;status&quot;:401,&quot;massage&quot;:&quot;Authorization header required&quot;}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/AddPupil.feature:42)
+</pre></div><a href='#' onClick='toggleBox("stack-trace269973396", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace269973396'><pre>java.lang.AssertionError: &quot;message&quot; field does not exist in response body
+
+Actual Response body is {&quot;status&quot;:401,&quot;massage&quot;:&quot;Authorization header required&quot;}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/AddPupil.feature:42)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to delete a pupil with valid pupilId", "Optional[Delete Pupils request functional tests]"</td>
+<td><div><pre>java.lang.IllegalStateException: Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+Try registering a default parser using:
+   RestAssured.defaultParser(&lt;parser type&gt;);
+Content was:
+
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.assertion.StreamVerifier.newAssertion(StreamVerifier.groovy:43)
+	at io.restassured.assertion.StreamVerifier$newAssertion.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcher.validate(BodyMatcher.groovy:85)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcherGroup$_validate_closure2.doCall(BodyMatcherGroup.groovy:47)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:428)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3562)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3547)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3647)
+	at org.codehaus.groovy.runtime.dgm$101.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:247)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.assertion.BodyMatcherGroup.validate(BodyMatcherGroup.groovy:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:480)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:261)
+	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:108)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at utilities.APIValidationUtil.validateBodyHasParameter(APIValidationUtil.java:27)
+	at steps.CommonSteps.i_should_see_field_in_response(CommonSteps.java:89)
+	at ?.I should see &quot;pupil deleted&quot; description in response(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:15)
+... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1496097932", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1496097932'><pre>java.lang.IllegalStateException: Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+Try registering a default parser using:
+   RestAssured.defaultParser(&lt;parser type&gt;);
+Content was:
+
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.assertion.StreamVerifier.newAssertion(StreamVerifier.groovy:43)
+	at io.restassured.assertion.StreamVerifier$newAssertion.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcher.validate(BodyMatcher.groovy:85)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcher$validate$0.call(Unknown Source)
+	at io.restassured.assertion.BodyMatcherGroup$_validate_closure2.doCall(BodyMatcherGroup.groovy:47)
+	at sun.reflect.GeneratedMethodAccessor136.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:263)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:428)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3562)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3547)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.collect(DefaultGroovyMethods.java:3647)
+	at org.codehaus.groovy.runtime.dgm$101.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoMetaMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:247)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.assertion.BodyMatcherGroup.validate(BodyMatcherGroup.groovy:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at io.restassured.assertion.BodyMatcherGroup$validate$3.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:480)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.GeneratedMethodAccessor119.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:261)
+	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:108)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$body(ValidatableResponseImpl.groovy)
+	at sun.reflect.GeneratedMethodAccessor124.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
+	at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
+	at utilities.APIValidationUtil.validateBodyHasParameter(APIValidationUtil.java:27)
+	at steps.CommonSteps.i_should_see_field_in_response(CommonSteps.java:89)
+	at ?.I should see &quot;pupil deleted&quot; description in response(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:15)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to delete a pupil with non-existent pupilId", "Optional[Delete Pupils request functional tests]"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;204&gt;.
+
+
+Actual Response body is 
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:20)
+</pre></div><a href='#' onClick='toggleBox("stack-trace303300540", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace303300540'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;204&gt;.
+
+
+Actual Response body is 
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:20)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to delete a pupil with non-existent pupilId", "Optional[Delete Pupils request functional tests]"</td>
+<td><div><pre>java.lang.AssertionError: &quot;message&quot; field does not exist in response body
+
+Actual Response body is {&quot;status&quot;:405,&quot;massage&quot;:&quot;DELETE method not allowed&quot;}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:27)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1263927050", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1263927050'><pre>java.lang.AssertionError: &quot;message&quot; field does not exist in response body
+
+Actual Response body is {&quot;status&quot;:405,&quot;massage&quot;:&quot;DELETE method not allowed&quot;}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:27)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to delete a pupil if basic authentication header is not provided", "Optional[Delete Pupils request functional tests]"</td>
+<td><div><pre>java.lang.AssertionError: &quot;message&quot; field does not exist in response body
+
+Actual Response body is {&quot;status&quot;:401,&quot;massage&quot;:&quot;Authorization header required&quot;}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace416579056", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace416579056'><pre>java.lang.AssertionError: &quot;message&quot; field does not exist in response body
+
+Actual Response body is {&quot;status&quot;:401,&quot;massage&quot;:&quot;Authorization header required&quot;}
+
+	at steps.AddPupilAPISteps.i_should_see_response_body_as_following_details(AddPupilAPISteps.java:156)
+	at ?.I should see following values in response body(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/DeletePupil.feature:36)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to get a pupil with non-existent pupilId", "Optional[Get Pupil request functional tests]"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;504&gt;.
+
+
+Actual Response body is {&quot;status&quot;:504,&quot;massage&quot;:&quot;Pupil with ID: \&quot;12321\&quot; not found&quot;}
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/GetPupil.feature:25)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1146719991", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1146719991'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;504&gt;.
+
+
+Actual Response body is {&quot;status&quot;:504,&quot;massage&quot;:&quot;Pupil with ID: \&quot;12321\&quot; not found&quot;}
+
+	at steps.CommonSteps.i_should_see_response_with_status_code_as(CommonSteps.java:34)
+	at ?.I should see response with status code as 404(file:///C:/Users/laksh/IdeaProjects/SnappetAPITest/src/test/java/features/GetPupil.feature:25)
+</pre></div></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to add pupil with only required parameters", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>2</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to add pupil with all supported parameters", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to add pupil with first name having max length of ---", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to add pupil with first name having min length of ---", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to add pupil if first name is not given", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to add pupil if last name is not given", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to add pupil if grade Id is not given", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to add pupil if username is not valid", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should not be able to add pupil if password is not valid", "Optional[Add Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to get a pupil with valid pupilId", "Optional[Get Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to get all pupils if empty pupilId is sent", "Optional[Get Pupil request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+<tr>
+<td title='testRunner.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: testRunner.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User should be able to get all pupils created", "Optional[Get Pupils request functional tests]"</td>
+<td></td>
+<td>0</td>
+<td>testRunner.TestNGTestRunner@7c29daf3</td></tr>
+</table><p>
+</body>
+</html>

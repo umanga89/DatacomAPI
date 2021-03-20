@@ -3,6 +3,9 @@ package utilities;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.restassured.RestAssured;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 
 public class Hooks extends BaseUtil {
 
@@ -14,7 +17,9 @@ public class Hooks extends BaseUtil {
 
     @Before
     public void setup(Scenario scenario) throws Exception {
+        BaseUtil.logger.info("---------------------------------------------------------------------");
         BaseUtil.logger.info("Scenario Started: " + scenario.getName());
+        RestAssured.filters(new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
 
     @After
