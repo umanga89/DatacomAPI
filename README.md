@@ -14,5 +14,6 @@ How you run this code is up to you, but usually you would start by using an IDE 
 You can use maven from the command line. Navigate to root directory of the project which has 'pom.xml' file
 
 * `mvn clean install`: it will run the test suite
+* Reports and log file will be created under target folder
 
 If you need more information please take a look at this [quick tutorial](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
