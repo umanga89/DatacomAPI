@@ -1,10 +1,13 @@
 package utilities;
 
+import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
+
+import java.io.File;
 
 import static org.hamcrest.Matchers.*;
 
@@ -46,9 +49,25 @@ public class APIValidationUtil extends BaseUtil {
         }
     }
 
+    public static void validateBodyParameterWithStringValueContainsValue(Response response, String key, String value) throws AssertionError {
+        try {
+            response.then().body(key, containsString(value));
+        } catch (AssertionError e) {
+            throw e;
+        }
+    }
+
     public static void validateBodyParameterWithBooleanValue(Response response, String key, boolean value) throws AssertionError {
         try {
             response.then().body(key, equalTo(value));
+        } catch (AssertionError e) {
+            throw e;
+        }
+    }
+
+    public static void validateBodyAllHasKey(Response response, String key) throws AssertionError {
+        try {
+            response.then().body("$", everyItem((hasKey(key))));
         } catch (AssertionError e) {
             throw e;
         }
@@ -105,6 +124,34 @@ public class APIValidationUtil extends BaseUtil {
             pupilId = jsonObject.get(key).toString();
         } catch (AssertionError e) {
             throw new AssertionError("field \"" + key + "\" is not found in response");
+        }
+        return pupilId;
+    }
+
+    public static String validateJsonSchema(Response response) throws AssertionError {
+
+        String pupilId = "";
+        //Need to set additionalProperties:false if no additional property is accepted in json response
+        //https://easy-json-schema.github.io/
+        File schemaFile = new File("src/test/java/jsonSchema/addPupilSchema.json");
+        try {
+            response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaFile));
+        } catch (AssertionError e) {
+            throw e;
+        }
+        return pupilId;
+    }
+
+    public static String validateArrayJsonSchema(Response response) throws AssertionError {
+
+        String pupilId = "";
+        //Need to set additionalProperties:false if no additional property is accepted in json response
+        //https://easy-json-schema.github.io/
+        File schemaFile = new File("src/test/java/jsonSchema/getAllPupilsSchema.json");
+        try {
+            response.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(schemaFile));
+        } catch (AssertionError e) {
+            throw e;
         }
         return pupilId;
     }

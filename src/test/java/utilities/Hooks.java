@@ -7,6 +7,8 @@ import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 
+import java.sql.SQLException;
+
 public class Hooks extends BaseUtil {
 
     private BaseUtil base;
@@ -23,7 +25,10 @@ public class Hooks extends BaseUtil {
     }
 
     @After
-    public void tearDown(Scenario scenario) {
+    public void tearDown(Scenario scenario) throws SQLException {
+        OrderDBUtil.deleteCustomerAccountFromDatabase(BaseUtil.customer_uuid);
+        CustomerDBUtil.deleteCustomerFromDatabase(BaseUtil.customer_uuid);
+        System.out.println("Customer:"+BaseUtil.customer_uuid+" deleted from database");
         BaseUtil.logger.info("Scenario Ended: " + scenario.getName());
     }
 }

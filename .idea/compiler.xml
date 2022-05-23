@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MotionalAPITest" />
-        <module name="SnappetAPITest" />
+        <module name="ElinvarAPITest" />
       </profile>
     </annotationProcessing>
   </component>
