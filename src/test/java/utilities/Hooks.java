@@ -26,9 +26,6 @@ public class Hooks extends BaseUtil {
 
     @After
     public void tearDown(Scenario scenario) throws SQLException {
-        OrderDBUtil.deleteCustomerAccountFromDatabase(BaseUtil.customer_uuid);
-        CustomerDBUtil.deleteCustomerFromDatabase(BaseUtil.customer_uuid);
-        System.out.println("Customer:"+BaseUtil.customer_uuid+" deleted from database");
         BaseUtil.logger.info("Scenario Ended: " + scenario.getName());
     }
 }

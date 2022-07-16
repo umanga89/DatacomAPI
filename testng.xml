@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Elinvar API Test Suite" verbose="10" configfailurepolicy="skip">
+<suite name="Datacom API Test Suite" verbose="10" configfailurepolicy="skip">
     <listeners>
         <listener class-name="listener.TestNGListenerImpl"/>
     </listeners>
-    <test name="Elinvar Functional Testing" >
+    <test name="Datacom API Test" >
         <classes>
             <class name="testRunner.TestNGTestRunner"/>
         </classes>

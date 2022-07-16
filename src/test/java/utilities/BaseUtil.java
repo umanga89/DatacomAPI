@@ -17,14 +17,5 @@ public class BaseUtil {
     public static PrintStream requestCapture;
     public static Response response;
     public static Properties props;
-    public static String customer_name;
-    public static BigDecimal account_balance;
-    public static String customer_uuid;
-    public static int customer_account_id;
-    public static String isin;
-    public static double product_price;
-    public static int quantity;
-    public static Connection customer_db_connection;
-    public static Connection order_db_connection;
 
 }
