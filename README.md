@@ -1,5 +1,4 @@
-# SnappetAPIAutomationFramework
-
+# Datacom API Testsuite
 This is targeted at people with [Maven](https://maven.apache.org/) experience.
 
 To build it, you will need to download and unpack the latest (or recent) version of Maven (https://maven.apache.org/download.cgi)
